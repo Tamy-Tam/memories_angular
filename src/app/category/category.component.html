@@ -1,6 +1,6 @@
 <div class="category-card">
-    <h2>{{ category.title }}</h2>
-    <p>Mis en ligne le {{ category.createdDate | date  }}</p>
+    <h2>{{ category.title | titlecase }}</h2>
+    <p id="date"><i> Mis en ligne le {{ category.createdDate | date  }} </i></p>
     <img [src]="category.imageUrl" [alt]="category.title">
     <p>{{ category.description }} </p>
 

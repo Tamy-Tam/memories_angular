@@ -6,12 +6,16 @@ import { CategoryComponent } from './category/category.component';
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule
