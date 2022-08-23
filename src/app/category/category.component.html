@@ -1,0 +1,11 @@
+<div class="category-card">
+    <h2>{{ category.title }}</h2>
+    <p>Mis en ligne le {{ category.createdDate | date  }}</p>
+    <img [src]="category.imageUrl" [alt]="category.title">
+    <p>{{ category.description }} </p>
+
+    <p>
+        <button (click)="onLike()"> {{category.likeIcon}} </button> 
+    </p>
+
+</div>
