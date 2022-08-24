@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Category } from '../models/category.model';
+import { MemoriesService } from '../services/memories.service';
 
 @Component({
   selector: 'app-category',
@@ -9,17 +10,17 @@ import { Category } from '../models/category.model';
 export class CategoryComponent implements OnInit {
 
   @Input() category!: Category;
-  //likeIcon! : String;
 
-  ngOnInit() {
-//    this.likeIcon = '❤️'
-   }
+  constructor(private memoriesService: MemoriesService) { }
+
+  ngOnInit() { }
 
   onLike() {
     if (this.category.likeIcon === '🤍') {
-      this.category.likeIcon = '❤️'
+      //this.category.likeIcon = '❤️'
+      this.memoriesService.likeCategoryById(this.category.id, 'like');
     } else {
-      this.category.likeIcon = '🤍'
+      this.memoriesService.likeCategoryById(this.category.id, 'unlike');
     }
   }
 
